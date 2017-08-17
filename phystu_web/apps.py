@@ -1,5 +1,8 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
 from django.apps import AppConfig
 
 
-class PhystuWebConfig(AppConfig):
-    name = 'phystu_web'
+class PhyionConfig(AppConfig):
+    name = 'phyion'
