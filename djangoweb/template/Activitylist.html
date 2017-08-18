@@ -1,0 +1,54 @@
+{% extends "Base.html" %}
+
+{% block Title %}Lastest Activity{% endblock %}
+
+{% block Style %}
+	.banner-bottom-left {
+		padding-left: 30px;
+	}
+	.lifestyle-bg {
+		min-height: 206em;
+	}
+{% endblock %}
+
+{% block Js %}
+	{{block.super}}
+{% endblock %}
+
+{% block Subject %}
+	{{block.super}}
+{% endblock %}
+
+{% block ToMail %}
+	{{block.super}}
+{% endblock %}
+
+{% block Slider %} {% endblock %}
+
+{% block Main%}
+ 	<div class="col-md-8 banner-bottom-left">
+ 		<div class="banner-bottom-left-grids">
+			{% for activity in ActivityList %}
+				<div class="banner-left-grid lifestyle-left-grid">
+					<a href="{{ activity.url }}"><img src="{{activity.image}}" alt=""  style="width:400px;height:260px" /></a>
+					<h3><a href="{{ activity.url }}">{{activity.title}}</a></h3>
+					<p class="comments">{{activity.timestamp}}</p>
+					<p class="text">{% autoescape off %}{{activity.introduction|slice:"40"}}{% endautoescape %}...</p>
+					<div class="more">
+						<a href="{{activity.url}}">Read More</a>
+					</div>
+				</div>
+			{% empty %}
+				<h3 align="center" style="color:gray;"><i>NULL</i></h3>
+			{% endfor %}
+ 		</div>
+ 	</div>
+{% endblock %}
+ 
+{% block MailTitle %} 
+	{{block.super}}
+{% endblock %}
+
+{% block Suggest %}
+	{{block.super}}
+{%  endblock %}

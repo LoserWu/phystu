@@ -1,0 +1,53 @@
+{% extends "Base.html" %}
+
+{% block Title %}{{news.0.title}}{% endblock %}
+
+{% block Style %}
+	.im2{
+		align: center;
+		border: 0;
+		padding: 4px;
+		margin: 0; "
+	}
+{% endblock %}
+
+{% block Js %}
+	{{block.super}}
+{% endblock %}
+
+{% block Subject %}
+	{{block.super}}
+{% endblock %}
+
+{% block ToMail %}
+	{{news.0.email}}
+{% endblock %}
+
+{% block Slider %} {% endblock %}
+
+{% block Main%}
+	<div class="col-md-8 banner-bottom-left">
+		<div class="banner-bottom-left-grids">
+			<div class="single-left-grid">
+				<h2 style="text-align: center;">{{news.0.title}}</h2>
+				<p style="text-align: center;"><img src="{{news.0.image1}}" alt="" style="width:350px;height:200px"/></p>
+				<h4 style="text-align: right;">{{news.0.subtitle}}</h4>
+				<h6 style="text-align: center;">{{news.0.timestamp}}</h6>
+				<h6>{% autoescape off %}{{news.0.author}}{% endautoescape %}</h6>
+				<br/>
+				<p class="text text1">{% autoescape off %}{{news.0.text}}{% endautoescape %}
+				</p><p align="center"><img class="im2" src="{{news.0.image2}}" alt="" style="width:270px;height:200px" />
+				</p>
+				<p><h4 align="center">END</h4></p>
+			</div>
+		</div>		
+	</div>
+{% endblock %}
+ 
+{% block MailTitle %} 
+	{{block.super}}
+{% endblock %}
+
+{% block Suggest %}
+	{{block.super}}
+{%  endblock %}

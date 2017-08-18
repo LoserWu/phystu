@@ -1,0 +1,131 @@
+{% extends "Base.html" %}
+
+{% block Title %}Resource{% endblock %}
+
+{% block Style %}
+	.archives-bg {
+		min-height: 78em;
+	}
+{% endblock %}
+
+{% block Js %}
+	{{block.super}}
+{% endblock %}
+
+{% block Subject %}
+	{{block.super}}
+{% endblock %}
+
+{% block ToMail %}
+	{{block.super}}
+{% endblock %}
+
+{% block Slider %} {% endblock %}
+
+{% block Main%}
+	<div class="col-md-8 banner-bottom-left">
+ 		<div class="archives">
+ 			<h2>Resource Download</h2>
+ 			<div class="archives-info">
+ 				<h5 align="center">Vedio</h5>
+ 				<div class="col-md-4 archives-grid">
+ 					<ul>
+						{% for vedio in VedioList %}
+							{% if not vedio.id|divisibleby:2 %}
+								<li><a href={{vedio.url}}>{{vedio.name}}</a></li>
+							{% endif %}
+						{% empty %}
+							<h6 style="color:gray"><i>NULL</i></h6>
+						{% endfor %}
+ 					</ul>
+ 				</div>
+ 				<div class="col-md-4 archives-grid">
+ 					<ul>
+						{% for vedio in VedioList %}
+							{% if vedio.id|divisibleby:2 %}
+								<li><a href={{vedio.url}}>{{vedio.name}}</a></li>
+							{% endif %}
+						{% empty %}
+							<h6 style="color:gray"><i>NULL</i></h6>
+						{% endfor %}
+ 					</ul>
+ 				</div>
+ 				<div class="clearfix"> </div>
+ 			</div>
+ 			<div class="archives-info">
+ 				<h5 align="center">Picture</h5>
+ 				<div class="col-md-4 archives-grid">
+ 					<ul>
+ 						{% for picture in PictureList %}
+							{% if picture.id|divisibleby:2 %}
+								<li><a href={{picture.url}}>{{picture.name}}</a></li>
+							{% endif %}
+						{% empty %}
+							<h6 style="color:gray"><i>NULL</i></h6>
+						{% endfor %}
+ 					</ul>
+ 				</div>
+ 				<div class="col-md-4 archives-grid">
+ 					<ul>
+ 						{% for picture in PictureList %}
+							{% if not picture.id|divisibleby:2 %}
+								<li><a href={{picture.url}}>{{picture.name}}</a></li>
+							{% endif %}
+						{% empty %}
+							<h6 style="color:gray"><i>NULL</i></h6>
+						{% endfor %}
+ 					</ul>
+ 				</div>
+ 				<div class="clearfix"> </div>
+ 			</div>
+ 			<div class="archives-info">
+ 				<h5 align="center">Document</h5>
+ 				<div class="col-md-4 archives-grid">
+ 					<ul>
+						<h6>经验交流</h6>
+						{% for document in DocList %}
+							{% ifequal document.style 'jingyan' %}
+								<li><a href={{document.url}}>{{document.name}}</a></li>
+							{% endifequal %}
+						{% empty %}
+							<h6 style="color:gray"><i>NULL</i></h6>
+						{% endfor %}
+ 					</ul>
+ 				</div>
+				<div class="col-md-4 archives-grid">
+ 					<ul>
+						<h6>规章制度</h6>
+						{% for document in DocList %}
+							{% ifequal document.style 'guizhang' %}
+								<li><a href={{document.url}}>{{document.name}}</a></li>
+							{% endifequal %}
+						{% empty %}
+							<h6 style="color:gray"><i>NULL</i></h6>
+						{% endfor %}
+ 					</ul>
+ 				</div>
+				<div class="col-md-4 archives-grid">
+ 					<ul>
+						<h6>其他文件</h6>
+						{% for document in DocList %}
+							{% ifequal document.style 'qita' %}
+								<li><a href={{document.url}}>{{document.name}}</a></li>
+							{% endifequal %}
+						{% empty %}
+							<h6 style="color:gray"><i>NULL</i></h6>
+						{% endfor %}
+ 					</ul>
+ 				</div>
+ 			</div>
+ 		</div>
+ 	</div>
+{% endblock %}
+ 
+{% block MailTitle %} 
+	{{block.super}}
+{% endblock %}
+
+{% block Suggest %}
+	{{block.super}}
+{%  endblock %}
+

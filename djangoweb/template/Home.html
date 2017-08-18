@@ -1,0 +1,82 @@
+﻿{% extends "Base.html" %}
+
+{% block Title %}Home{% endblock %}
+
+{% block Style %}
+	.travel-bg{
+		min-height: 107em;
+	}
+{% endblock %}
+
+{% block Js %}
+	{{block.super}}
+{% endblock %}
+
+{% block Subject %}
+	{{block.super}}
+{% endblock %}
+
+{% block ToMail %}
+	{{block.super}}
+{% endblock %}
+
+{% block Slider %}			
+	<div class="slider" style="background:black;">
+		<ul class="rslides" id="slider">
+			<li><img src="/static/html/images/home/1.jpg" alt="" style="height:450px;width:1110px;"></li>
+			<li><img src="/static/html/images/home/2.jpg" alt="" style="height:450px;width:1110px;"></li>
+			<li><img src="/static/html/images/home/3.jpg" alt="" style="height:450px;width:1110px;"></li>
+			<li><img src="/static/html/images/home/4.jpg" alt="" style="height:450px;width:1110px;"></li>
+			<li><img src="/static/html/images/home/5.jpg" alt="" style="height:450px;width:1110px;"></li>
+		</ul>
+		<ul id="slider3-pager">
+			<li><a href="#"><img src="/static/html/images/home/1c.jpg" alt="" style="height:50px;width:100px;"></a></li>
+			<li><a href="#"><img src="/static/html/images/home/2c.jpg" alt="" style="height:50px;width:100px;"></a></li>
+			<li><a href="#"><img src="/static/html/images/home/3c.jpg" alt="" style="height:50px;width:100px;"></a></li>
+			<li><a href="#"><img src="/static/html/images/home/4c.jpg" alt="" style="height:50px;width:100px;"></a></li>
+			<li><a href="#"><img src="/static/html/images/home/5c.jpg" alt="" style="height:50px;width:100px;"></a></li> 	  
+		</ul>
+	</div>
+	
+	<div class="strip1"> </div>
+{% endblock %}
+
+{% block Main%}
+	<div class="post" align="center" ></>
+ 		<h2>OUR FAMILY</h2>
+		<br/><br/>
+ 		<div>
+			<h4>&nbsp&nbsp欢迎来到中国科学技术大学物理学院学生会:) 物院学生会是中国科大规模最大、活动最为丰富的院系学生会之一，是一个团结向上、温馨和谐的大家庭。</h4>
+			<div >
+				<p  align="center"><img src="/static/html/images/home/h1.jpg" alt="" style="width:700px;height:200px;" /></p>
+			</div>
+			<div>
+				<h4><strong>学生会主席团</strong></h4>
+				<h5 style="color:#0x101010">主席：&nbsp&nbsp陈&nbsp可</h5>
+				<h5 style="color:#0x101010">常务副主席：李东昊&nbsp&nbsp贺东&nbsp&nbsp李煜坤&nbsp&nbsp孙昊楠</h5>
+				<p class="text">这里是物院学生会主席团~作为物院学生会的核心部分，主席团承担着整个院会组织的统筹规划的重任。主席团由主席、常务副主席、副主席构成，各主席各司其职，既对院会的组织架构和活动规划起带头作用，同时肩负着对部长、部员给予一定指导和引领的责任。</p>
+				<p>这里既有英俊帅气、幽默风趣的学长，也有富有活力、文采斐然的学姐，为物院学生会这艘巨轮指引方向。当然，如果有物院的同学愿意加入物院大家庭，主席团一定会对萌新倍加关心的哦~</p>
+			</div>
+			<div >
+				<p  align="center"><img src="/static/html/images/home/h2.jpg" alt="" style="width:700px;height:230px;" /></p>
+			</div>
+			<div>
+				<h4><strong>学生会部长副部长</strong></h4>
+				<h6 style="color:#0x101010">实践部部长：&nbsp高晓磊&nbsp&nbsp&nbsp文体部部长：&nbsp张庭宇</h6>
+				<h6 style="color:#0x101010">科技部部长：&nbsp孙子庭&nbsp&nbsp&nbsp外宣部部长：&nbsp朱震昕</h6>
+				<h6 style="color:#0x101010">综合办公室部长&nbsp王德全</h6>
+				<p class="text">物院学生会由文体、实践、外宣、科技、综合办公室五个部门组成</p><p>在这里，有出类拔萃的主席、部长和部员们，有精彩纷呈的各种特色活动，有既有态度又有温度的公众号物理人USTC，大家就像家人一样互相帮助、共同进步，从而能让物院学生会以更好的姿态服务大家。</p>
+			</div>
+			<h4>欢迎每一位物院的同学加入物院学生会，成为这个大家庭的一员 :) </h4>
+			<div class="clearfix"> </div>
+		</div>
+ 	</div>
+{% endblock %}
+ 
+{% block MailTitle %} 
+	{{block.super}}
+{% endblock %}
+
+{% block Suggest %}
+	{{block.super}}
+{%  endblock %}

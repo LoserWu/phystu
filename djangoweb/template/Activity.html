@@ -1,0 +1,42 @@
+{% extends "Base.html" %}
+
+{% block Title %}{{act.title}}{% endblock %}
+
+{% block Style %} {% endblock %}
+
+{% block Js %} {% endblock %}
+
+{% block Subject %}
+	"活动报名"
+{% endblock %}
+
+{% block ToMail %}
+	"{{activity.email}}"
+{% endblock %}
+
+{% block Slider %} {% endblock %}
+
+{% block Main%}
+	<div class="col-md-8 banner-bottom-left">
+ 		<div class="banner-bottom-left-grids">
+ 			<div class="single-left-grid">
+ 				<h3 align="center">{{activity.title}}</h3>
+ 				<p align="center"><img src="{{activity.image}}" alt="" style="width:600px;height:800px" /></p>
+				<h5 style="color:gray;" align="right">{{activity.timestamp}}</h5>
+				<br>
+ 				<p class="text">{% autoescape off %}{{activity.introduction}}{% endautoescape %}</p>
+				<br>
+				<h6 class="text" align="left" style="color:#0x101010">主办：{{activity.host}}</h6>
+				<h6 class="text" align="left" style="color:#0x101010">承办：{{activity.undertake}}</h6>
+ 			</div>
+		</div>
+	</div>
+{% endblock %}
+ 
+{% block MailTitle %} 
+	Want to <span class="bold-text">Join in us</span>
+{% endblock %}
+
+{% block Suggest %} {%  endblock %}
+
+				

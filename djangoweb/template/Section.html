@@ -1,0 +1,42 @@
+{% extends "Base.html" %}
+
+{% block Title %}{{sec.0.Name}}{% endblock %}
+
+{% block Js %}
+	{{block.super}}
+{% endblock %}
+
+{% block Subject %}
+	{{block.super}}
+{% endblock %}
+
+{% block ToMail %}
+	{{block.super}}
+{% endblock %}
+
+{% block Main%}
+	<div class="col-md-8 banner-bottom-left">
+		<div class="banner-bottom-left-grids">
+			<div class="single-left-grid">
+				<h2 style="text-align: center;">{{sec.0.Name}}</h2>
+				<p align="center"><img src="{{sec.0.image}}" style="width:600px;height:290px;"></p>
+				<h6 style="text-align: center;">部长：{{sec.0.host}}</h6>
+				<h6 style="text-align: center;">副部长：{{sec.0.sub}}</h6>
+				<br/>
+				{% autoescape off %}
+				<p class="text text1">{{sec.0.introduction}}</p>
+				{% endautoescape %} 
+				<p class="text text3" align='right'>联系邮箱：{{ sec.0.email }}</p>
+			</div>
+		</div>		
+	</div>
+		
+{% endblock %}
+ 
+{% block MailTitle %} 
+	{{block.super}}
+{% endblock %}
+
+{% block Suggest %}
+	{{block.super}}
+{%  endblock %}

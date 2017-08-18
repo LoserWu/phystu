@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<title>Manage Page</title>
+<meta charset="UTF-8">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.1.min.js"></script>
+<script type="text/javascript">
+	function up(){
+		var password="";
+		password=prompt('请输入密码：','');
+		if (password!='phyion'){
+			alert("密码输入不正确，无法进入本站！！");
+			window.close();
+		}
+    }
+	function login(){
+		var password="";
+		password=prompt('请输入密码：','');
+		if (password!='phyion'){
+			alert("密码输入不正确，无法进入本站！！");
+			window.close();
+		}
+		else{
+			var fun = $('#function').val();
+			var url = "http://127.0.0.1:8000/manage/" + fun ;
+			window.open(url);
+		}
+    }
+</script>
+</head>
+
+	<body class="body">
+	<br><br><br><hr><hr><br>
+	<div align="center">
+	<form align="center">
+		<p>Function&nbsp：&nbsp<input type="text" id="function"></p>
+		<input type="button" value="Submit" onclick="login();">
+	</form>
+	</div><br><hr>
+	<div align="center">
+		<form enctype="multipart/form-data" action="/uploadFile/" method="post" />
+			<input type="file" name="myfile" />
+			<br/>
+			<input type="submit" value="UpLoad" onclick="up();"/> 
+		</form>
+	</div>
+<hr><br>
+	<div>
+		<h2 align="center">Help List</h3>
+		<table frame=void align="center" width=900px>
+			<tr>
+				<ul>
+					<td width=100px/>
+					<td>				
+						<li><p><strong>ReadNews(filename):</strong></p>
+							<p>&nbsp&nbsp读取并更新新闻，filename为文件名</p>
+							<p>&nbsp&nbsp(以'n'+日期命名,如"n20170807.txt")</p>
+							<p>&nbsp&nbsp文件格式要求:<a href="newsgeshi.txt">新闻格式</p>
+						</li>
+					</td>
+					<td width=150px/>
+					<td>
+						<li><p><strong>ReadActivity(filename):</strong></p>
+							<p>&nbsp&nbsp读取并更新活动信息，filename为文件名</p>
+							<p>&nbsp&nbsp(以'a'+日期命名,如"n20170807.txt")</p>
+							<p>&nbsp&nbsp文件格式要求:<a href="activitygeshi.txt">活动格式</p>
+					</td>
+				</ul>
+			</tr>
+			<tr>
+				<ul>
+					<td width=100px/>
+					<td>				
+						<li><p><strong>DeleteNews(filename):</strong></p>
+							<p>&nbsp&nbsp删除新闻，filename为文件名</p>
+							<p>&nbsp&nbspfilename=='all'删除所有新闻数据</p>
+						</li>
+					</td>
+					<td width=150px/>
+					<td>
+						<li><p><strong>DeleteActivity(filename):</strong></p>
+							<p>&nbsp&nbsp删除活动信息，filename为文件名</p>
+							<p>&nbsp&nbspfilename='all'删除所有活动数据</p>
+					</td>
+				</ul>
+			</tr>
+			<tr>
+				<ul>
+					<td width=100px/>
+					<td>				
+						<li><p><strong>Init():</strong></p>
+							<p>&nbsp&nbsp网站初始化</p>
+						</li>
+					</td>
+					<td width=150px/>
+					<td>
+						<li><p><strong>ReadSection(filename):</strong></p>
+							<p>&nbsp&nbsp读取部门活动信息，filename为文件名</p>
+					</td>
+				</ul>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
